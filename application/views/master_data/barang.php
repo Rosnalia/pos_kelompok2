@@ -22,27 +22,44 @@
 					<th>Aksi</th>
                 </tr>
             </thead>
-			<?php $no = 1;
-			foreach($barang as $brg) {
-            	echo "<tbody>
+			<tbody>
+				<?php foreach ($barang as $brg) : ?>
 					<tr>
-						<td>".$no++."</td>
-						<td>".$brg->idKategori."</td>
-						<td>".$brg->namaBarang."</td>
-						<td>".$brg->hargaBeli."</td>
-						<td>".$brg->hargaJual."</td>
-						<td>".$brg->stock."</td>
+						<td><?php echo $brg->idBarang; ?></td>
+						<td><?php echo $brg->idKategori; ?></td>
+						<td><?php echo $brg->namaBarang; ?></td>
+						<td><?php echo $brg->hargaBeli; ?></td>
+						<td><?php echo $brg->hargaJual; ?></td>
+						<td><?php echo $brg->stock; ?></td>
 						<td>
-							<a href=''class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
-							<a href=''class='btn btn-danger btn-sm' ><i class='fas fa-trash'></i></a>
+							<a href='<?php echo base_url('barang/edit_barang/' . $brg->idBarang) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
+							<a href='#hapus' data-toggle="modal" class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
 						</td>
-					</tr>
-                
-            	</tbody>";
 
-			}
-			?>
-        </table>
-    </div>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
 </div>
-    
+
+<!-- Modal Hapus -->
+
+<div class="modal" tabindex="-1" role="dialog" id="hapus">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h5>Apakah anda yakin ingin menghapus data ini?</h5>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+				<a href="<?php echo base_url('barang/hapus_barang/' . $brg->idBarang) ?>" class="btn btn-danger">Hapus</a>
+			</div>
+		</div>
+	</div>
+</div>

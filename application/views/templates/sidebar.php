@@ -98,18 +98,6 @@
                                     <p>Penjualan</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('retur') ?>" class="nav-link text-light">
-                                <i class="far fa-circle nav-icon"></i>
-                                    <p>Retur</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('terima') ?>" class="nav-link text-light">
-                                <i class="far fa-circle nav-icon"></i>
-                                    <p>Terima</p>
-                            </a>
-                        </li>
                     </ul>
             </li>
 

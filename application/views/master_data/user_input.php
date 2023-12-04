@@ -8,12 +8,12 @@
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">ID User</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ID User">
+                    <label>ID User</label>
+                    <input type="integer" class="form-control" id="" placeholder="ID User">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
+                    <label>Nama Lengkap</label>
+                    <input type="string" class="form-control" id="" placeholder="Nama Lengkap">
                   </div>
 									<div class="form-group">
                   <label>Level User</label>

@@ -4,7 +4,7 @@ class Model_user extends CI_Model
 
     function login($username, $password)
     {
-        $chek =  $this->db->join('akses','akses.id_akses = user.id_akses','left')
+        $chek =  $this->db->join('akses','akses.idAkses = user.idAkses','left')
         ->get_where('user', array('username' => $username, 'password' =>  md5($password)));
         if ($chek->num_rows() > 0) {
             return $chek;
