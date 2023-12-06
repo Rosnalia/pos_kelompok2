@@ -13,7 +13,7 @@ class Barang extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-
+ 
 	public function tambah_barang()
 	{
 		$data['barang'] = $this->Model_barang->get_barang()->result();
@@ -22,7 +22,7 @@ class Barang extends CI_Controller
 		$this->load->view('master_data/barang_input', $data);
 		$this->load->view('templates/footer');
 	}
-
+ 
 	public function insert_barang()
 	{
 		$idBarang		= $this->input->post('idBarang');

@@ -7,7 +7,7 @@
 		<table id="example1" class="table table-bordered table-striped">
 		<div class="pull-right">
 			<?php
-				echo anchor('barang_input', 'Tambah data', array('class' => 'btn btn-success'))
+				echo anchor('barang_input', 'Tambah Data', array('class' => 'btn btn-success'))
 			?>
 		</div>
             <!-- <button type="submit" class="btn btn-primary btn-block col-1 float-right">+</button> -->

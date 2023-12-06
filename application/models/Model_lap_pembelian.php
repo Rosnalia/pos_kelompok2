@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Model_pembelian extends CI_Model
+class Model_lap_pembelian extends CI_Model
 {
 
-	public function get_pembelian()
+	public function get_lap_pembelian()
 	{
 		$this->db->select('*');
-		$this->db->from('tr_pembelian');
+		$this->db->from('ms_pembelian');
 		return $this->db->get();
 	}
 
-	public function insert_pembelian($data)
+	public function insert_lap_pembelian($data)
 	{
-		$this->db->insert('tr_pembelian', $data);
+		$this->db->insert('ms_pembelian', $data);
 	}
-	public function edit_pembelian($where, $table)
+	public function edit_lap_pembelian($where, $table)
 	{
 		return $this->db->get_where($table, $where);
 	}
