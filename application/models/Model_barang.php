@@ -7,6 +7,7 @@ class Model_barang extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('ms_barang');
+		$this->db->join('ms_kategori', 'ms_barang.idKategori=ms_kategori.idKategori');
 		return $this->db->get();
 	}
 

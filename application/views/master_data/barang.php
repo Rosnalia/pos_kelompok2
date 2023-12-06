@@ -1,32 +1,33 @@
+<?php echo $this->session->flashdata('success'); ?>
 <div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Barang</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
+	<div class="card-header">
+		<h3 class="card-title">Barang</h3>
+	</div>
+	<!-- /.card-header -->
+	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
-		<div class="pull-right">
-			<?php
-				echo anchor('barang_input', 'Tambah Data', array('class' => 'btn btn-success'))
-			?>
-		</div>
-            <!-- <button type="submit" class="btn btn-primary btn-block col-1 float-right">+</button> -->
-            <thead>
-                <tr>
+			<div class="pull-right">
+				<a href="<?= base_url('barang/tambah_barang') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
+					Tambah Data
+				</a>
+			</div>
+			<!-- <button type="submit" class="btn btn-primary btn-block col-1 float-right">+</button> -->
+			<thead>
+				<tr>
 					<th>ID Barang</th>
-					<th>ID Kategori</th>
+					<th>Kategori</th>
 					<th>Nama Barang</th>
 					<th>Harga Beli</th>
 					<th>Harga Jual</th>
 					<th>Stock</th>
 					<th>Aksi</th>
-                </tr>
-            </thead>
+				</tr>
+			</thead>
 			<tbody>
 				<?php foreach ($barang as $brg) : ?>
 					<tr>
 						<td><?php echo $brg->idBarang; ?></td>
-						<td><?php echo $brg->idKategori; ?></td>
+						<td><?php echo $brg->kategori; ?></td>
 						<td><?php echo $brg->namaBarang; ?></td>
 						<td><?php echo $brg->hargaBeli; ?></td>
 						<td><?php echo $brg->hargaJual; ?></td>

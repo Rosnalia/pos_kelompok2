@@ -14,7 +14,12 @@
  				</div>
  				<div class="form-group">
  					<label>ID Kategori</label>
- 					<input type="text" class="form-control" name="idKategori" placeholder="ID Kategori" value="<?php echo $brg->idKategori ?>">
+ 					<select class="form-control select2" style="width: 100%;" name="idKategori">
+ 						<option selected disabled>Pilih Kategori...</option>
+ 						<?php foreach ($kategori as $ktg) : ?>
+ 							<option value="<?php echo $ktg->idKategori ?>" <?= $brg->idKategori == $ktg->idKategori ? 'selected' : '' ?>><?php echo $ktg->kategori ?></option>
+ 						<?php endforeach; ?>
+ 					</select>
  				</div>
  				<div class="form-group">
  					<label>Nama Barang</label>
@@ -22,11 +27,21 @@
  				</div>
  				<div class="form-group">
  					<label>Harga Beli</label>
- 					<input type="text" class="form-control" name="hargaBeli" placeholder="Harga Beli" value="<?php echo $brg->hargaBeli ?>">
+ 					<div class="input-group">
+ 						<div class="input-group-prepend">
+ 							<span class="input-group-text">Rp</span>
+ 						</div>
+ 						<input type="text" class="form-control" name="hargaBeli" placeholder="Harga Beli" value="<?php echo $brg->hargaBeli ?>">
+ 					</div>
  				</div>
  				<div class="form-group">
  					<label>Harga Jual</label>
- 					<input type="text" class="form-control" name="hargaJual" placeholder="Harga Jual" value="<?php echo $brg->hargaJual ?>">
+ 					<div class="input-group">
+ 						<div class="input-group-prepend">
+ 							<span class="input-group-text">Rp</span>
+ 						</div>
+ 						<input type="text" class="form-control" name="hargaJual" placeholder="Harga Jual" value="<?php echo $brg->hargaJual ?>">
+ 					</div>
  				</div>
  				<div class="form-group">
  					<label>Stock</label>
@@ -36,7 +51,7 @@
 
  				<div class="box-footer">
  					<button type="submit" name="submit" class="btn btn-primary ">Simpan</button>
- 					<a href="<?php echo base_url() ?>suplier" class="btn btn-default ">Cancel</a>
+ 					<a href="<?php echo base_url() ?>barang" class="btn btn-default ">Cancel</a>
  				</div>
  		</form>
  	<?php endforeach; ?>
