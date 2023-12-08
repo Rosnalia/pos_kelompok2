@@ -19,7 +19,7 @@ class Transaksi_pembelian extends CI_Controller
 		$data['pembelian'] = $this->Model_pembelian->get_pembelian()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('transaksi/tr_pembelian_input', $data); 
+		$this->load->view('transaksi/tr_pembelian_input', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -88,16 +88,7 @@ class Transaksi_pembelian extends CI_Controller
 	{
 		$where = array('idTrPembelian' => $id);
 		$this->Model_pembelian->hapus($where, 'tr_pembelian');
-		$this->session->set_flashdata(
-			'success',
-			'<div class="alert alert-success alert-dismissible fade show" id="berhasil" role="alert">
-			<strong>Data berhasil dihapus</strong>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
-	  	</div>'
-		);
-
+		$this->session->set_flashdata('flashdata', 'Menghapus');
 		redirect('pembelian');
 	}
 }

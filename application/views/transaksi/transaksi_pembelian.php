@@ -7,7 +7,7 @@
 	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
 			<div class="pull-right">
-				<a href="<?= base_url('transaksi/tambah_pembelian') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
+				<a href="<?= base_url('transaksi_pembelian/tambah_pembelian') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
 				</a>
 			</div>

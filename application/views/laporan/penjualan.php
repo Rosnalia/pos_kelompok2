@@ -7,7 +7,7 @@
 	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
 			<div class="pull-right">
-				<a href="<?= base_url('laporan/tambah_lappenjualan') ?>" class="btn btn-success">
+				<a href="<?= base_url('laporan_penjualan/tambah_transaksi_penjualan') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
 				</a>
 			</div>
@@ -22,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($lappenjualan as $lappen) : ?>
+				<?php foreach ($lap_penjualan as $lappen) : ?>
 					<tr>
 						<td><?php echo $lappen->idPenjualan; ?></td>
 						<td><?php echo $lappen->idUser; ?></td>

@@ -110,13 +110,13 @@
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="<?= base_url('pembelian') ?>" class="nav-link text-light">
+									<a href="<?= base_url('laporan_pembelian') ?>" class="nav-link text-light">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Pembelian</p>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="<?= base_url('penjualan') ?>" class="nav-link text-light">
+									<a href="<?= base_url('laporan_penjualan') ?>" class="nav-link text-light">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Penjualan</p>
 									</a>

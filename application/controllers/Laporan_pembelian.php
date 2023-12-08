@@ -32,7 +32,7 @@ class Laporan_pembelian extends CI_Controller
 		$total			= $this->input->post('total');
 		$tglInput		= $this->input->post('tglInput');
 
- 
+
 		$data = array(
 
 			'idPembelian'	=> $idPembelian,

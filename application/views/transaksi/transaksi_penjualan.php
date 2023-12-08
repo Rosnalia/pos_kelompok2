@@ -7,18 +7,18 @@
 	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
 			<div class="pull-right">
-				<a href="<?= base_url('transaksi/tambah_penjualan') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
+				<a href="<?= base_url('transaksi_penjualan/tambah_penjualan') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
 				</a>
 			</div>
 			<thead>
 				<tr>
 					<th>ID Transaksi Penjualan</th>
-                    <th>ID Barang</th>
+					<th>ID Barang</th>
 					<th>ID Penjualan</th>
-                    <th>Nama Barang</th>
-                    <th>Jumlah</th>
-                    <th>Harga</th>
+					<th>Nama Barang</th>
+					<th>Jumlah</th>
+					<th>Harga</th>
 					<th>Sub Total</th>
 					<th>Aksi</th>
 				</tr>
