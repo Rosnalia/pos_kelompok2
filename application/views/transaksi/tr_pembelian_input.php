@@ -35,7 +35,7 @@
 
  			<div class="box-footer">
  				<button type="submit" name="submit" class="btn btn-primary ">Simpan</button>
- 				<a href="<?php echo base_url() ?>transaksi" class="btn btn-default ">Cancel</a>
+ 				<a href="<?php echo base_url() ?>transaksi_pembelian" class="btn btn-default ">Cancel</a>
  			</div>
  	</form>
  </div>
