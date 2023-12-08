@@ -34,7 +34,7 @@
 						<td><?php echo $trpen->harga; ?></td>
 						<td><?php echo $trpen->subTotal; ?></td>
 						<td>
-							<a href='<?php echo base_url('transaksi/edit_tr_penjualan/' . $trpen->idtrpenjualan) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
+							<a href='<?php echo base_url('transaksi/edit_penjualan/' . $trpen->idTrPenjualan) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
 							<a href='#hapus' data-toggle="modal" class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
 						</td>
 

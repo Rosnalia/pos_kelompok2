@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Penjualan extends CI_Controller
+class Laporan_penjualan extends CI_Controller
 {
 
 	public function index()
 	{
-		$data['lap_penjualan'] = $this->Model_lap_penjualan->get_lap_penjualan()->result();
+		$data['lappenjualan'] = $this->Model_lap_penjualan->get_lappenjualan()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('laporan/penjualan', $data);
@@ -14,16 +14,16 @@ class Penjualan extends CI_Controller
 	}
 
 
-	public function tambah_transaksi_penjualan()
+	public function tambah_lappenjualan()
 	{
-		$data['lap_penjualan'] = $this->Model_lap_penjualan->get_lap_penjualan()->result();
+		$data['lappenjualan'] = $this->Model_lap_penjualan->get_lappenjualan()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('laporan/lap_penjualan_input', $data);
 		$this->load->view('templates/footer');
 	}
 
-	public function insert_lap_penjualan()
+	public function insert_lappenjualan()
 	{
 		$idPenjualan	= $this->input->post('idPenjualan');
 		$idUser			= $this->input->post('idUser');
@@ -40,14 +40,14 @@ class Penjualan extends CI_Controller
 			'total'			=> $total,
 			'tglInput'		=> $tglInput,
 		);
-		$this->Model_lap_penjualan->insert_lap_penjualan($data);
-		redirect('lap_penjualan');
+		$this->Model_lap_penjualan->insert_lappenjualan($data);
+		redirect('lappenjualan');
 	}
 
-	public function edit_lap_penjualan($id)
+	public function edit_lappenjualan($id)
 	{
 		$where	= array('idPenjualan' => $id);
-		$data['lap_penjualan'] = $this->Model_lap_penjualan->edit_lap_penjualan($where, 'ms_penjualan')->result();
+		$data['lappenjualan'] = $this->Model_lap_penjualan->edit_lappenjualan($where, 'ms_penjualan')->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('laporan/penjualan', $data);
@@ -72,10 +72,10 @@ class Penjualan extends CI_Controller
 			'tglInput'		=> $tglInput,
 		);
 		$this->Model_lap_penjualan->update($data, 'ms_penjualan', $id, 'idPenjualan');
-		redirect('lap_penjualan');
+		redirect('lappenjualan');
 	}
 
-	public function hapus_lap_penjualan($id)
+	public function hapus_lappenjualan($id)
 	{
 		$where = array('idPenjualan' => $id);
 		$this->Model_lap_penjualan->hapus($where, 'ms_penjualan');
@@ -89,6 +89,6 @@ class Penjualan extends CI_Controller
 	  	</div>'
 		);
 
-		redirect('lap_penjualan');
+		redirect('lappenjualan');
 	}
 }

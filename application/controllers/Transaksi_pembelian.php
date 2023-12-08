@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Transaksi_Pembelian extends CI_Controller
+class Transaksi_pembelian extends CI_Controller
 {
 
 	public function index()
@@ -19,7 +19,7 @@ class Transaksi_Pembelian extends CI_Controller
 		$data['pembelian'] = $this->Model_pembelian->get_pembelian()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('transaksi/tr_pembelian_input', $data);
+		$this->load->view('transaksi/tr_pembelian_input', $data); 
 		$this->load->view('templates/footer');
 	}
 
