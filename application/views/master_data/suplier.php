@@ -9,7 +9,7 @@
 			<div class="pull-right">
 				<a href="<?= base_url('suplier/tambah_suplier') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
-				</a>
+				</a> 
 			</div>
 			<thead>
 				<tr>

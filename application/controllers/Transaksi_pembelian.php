@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Transaksi_Pembelian extends CI_Controller
+class Transaksi_pembelian extends CI_Controller
 {
 
 	public function index()
@@ -19,7 +19,7 @@ class Transaksi_Pembelian extends CI_Controller
 		$data['pembelian'] = $this->Model_pembelian->get_pembelian()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('transaksi/tr_pembelian_input', $data);
+		$this->load->view('transaksi/tr_pembelian_input', $data); 
 		$this->load->view('templates/footer');
 	}
 
@@ -28,6 +28,7 @@ class Transaksi_Pembelian extends CI_Controller
 		$idTrPembelian	= $this->input->post('idTrPembelian');
 		$idBarang		= $this->input->post('idBarang');
 		$idPembelian	= $this->input->post('idPembelian');
+		$namaBarang		= $this->input->post('namaBarang');
 		$jumlah			= $this->input->post('jumlah');
 		$harga			= $this->input->post('harga');
 		$subTotal		= $this->input->post('subTotal');
@@ -35,9 +36,10 @@ class Transaksi_Pembelian extends CI_Controller
 
 		$data = array(
 
-			'idTrpembelian'	=> $idTrPembelian,
+			'idTrPembelian'	=> $idTrPembelian,
 			'idBarang'		=> $idBarang,
-			'idpembelian'	=> $idPembelian,
+			'idPembelian'	=> $idPembelian,
+			'namaBarang'	=> $namaBarang,
 			'jumlah'		=> $jumlah,
 			'harga'			=> $harga,
 			'subTotal'		=> $subTotal,
@@ -61,6 +63,7 @@ class Transaksi_Pembelian extends CI_Controller
 		$idTrPembelian	= $this->input->post('idTrPembelian');
 		$idBarang		= $this->input->post('idBarang');
 		$idPembelian	= $this->input->post('idPembelian');
+		$namaBarang		= $this->input->post('namaBarang');
 		$jumlah			= $this->input->post('jumlah');
 		$harga			= $this->input->post('harga');
 		$subTotal		= $this->input->post('subTotal');
@@ -71,6 +74,7 @@ class Transaksi_Pembelian extends CI_Controller
 			'idTrPembelian'	=> $idTrPembelian,
 			'idBarang'		=> $idBarang,
 			'idPembelian'	=> $idPembelian,
+			'namaBarang'	=> $namaBarang,
 			'jumlah'		=> $jumlah,
 			'harga'			=> $harga,
 			'subTotal'		=> $subTotal,

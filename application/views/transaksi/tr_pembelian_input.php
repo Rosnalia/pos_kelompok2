@@ -4,7 +4,7 @@
  		<h3 class="card-title">Tambah Pembelian</h3>
  	</div>
  	<!-- /.card-header -->
- 	<!-- form start -->
+ 	<!-- form start --> 
  	<form action="<?php echo base_url() . 'transaksi/insert_pembelian'; ?>" method="post" enctype="multipart/form-data">
  		<div class="card-body">
  			<div class="form-group">
@@ -22,6 +22,10 @@
  			<div class="form-group">
  				<label>Jumlah</label>
  				<input type="text" class="form-control" name="jumlah" placeholder="Jumlah">
+ 			</div>
+			 <div class="form-group">
+ 				<label>Harga</label>
+ 				<input type="text" class="form-control" name="harga" placeholder="Harga">
  			</div>
  			<div class="form-group">
  				<label>Sub Total</label>

@@ -7,7 +7,7 @@
 	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
 			<div class="pull-right">
-				<a href="<?= base_url('transaksi/tambah_pembelian') ?>" class="btn btn-success">
+				<a href="<?= base_url('transaksi/tambah_pembelian') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
 				</a>
 			</div>
@@ -29,6 +29,7 @@
 						<td><?php echo $trpem->idTrPembelian; ?></td>
 						<td><?php echo $trpem->idBarang; ?></td>
 						<td><?php echo $trpem->idPembelian; ?></td>
+						<td><?php echo $trpem->namaBarang; ?></td>
 						<td><?php echo $trpem->jumlah; ?></td>
 						<td><?php echo $trpem->harga; ?></td>
 						<td><?php echo $trpem->subTotal; ?></td>

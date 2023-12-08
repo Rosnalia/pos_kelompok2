@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Laporan_Pembelian extends CI_Controller
+class Laporan_pembelian extends CI_Controller
 {
 
 	public function index()

@@ -7,7 +7,7 @@
 	<div class="card-body">
 		<table id="example1" class="table table-bordered table-striped">
 			<div class="pull-right">
-				<a href="<?= base_url('transaksi/tambah_tr_penjualan') ?>" class="btn btn-success">
+				<a href="<?= base_url('transaksi/tambah_penjualan') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
 					Tambah Data
 				</a>
 			</div>
@@ -24,16 +24,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($tr_penjualan as $trpen) : ?>
+				<?php foreach ($penjualan as $trpen) : ?>
 					<tr>
 						<td><?php echo $trpen->idTrPenjualan; ?></td>
 						<td><?php echo $trpen->idBarang; ?></td>
 						<td><?php echo $trpen->idPenjualan; ?></td>
+						<td><?php echo $trpen->namaBarang; ?></td>
 						<td><?php echo $trpen->jumlah; ?></td>
 						<td><?php echo $trpen->harga; ?></td>
 						<td><?php echo $trpen->subTotal; ?></td>
 						<td>
-							<a href='<?php echo base_url('transaksi/edit_tr_penjualan/' . $trpen->idtrpenjualan) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
+							<a href='<?php echo base_url('transaksi/edit_penjualan/' . $trpen->idTrPenjualan) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
 							<a href='#hapus' data-toggle="modal" class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
 						</td>
 
