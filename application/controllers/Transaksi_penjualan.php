@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Penjualan extends CI_Controller
+class Transaksi_penjualan extends CI_Controller
 {
 
 	public function index()
 	{
-		$data['tr_penjualan'] = $this->Model_penjualan->get_transaksi_penjualan()->result();
+		$data['penjualan'] = $this->Model_penjualan->get_penjualan()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('transaksi/transaksi_penjualan', $data);
@@ -14,20 +14,21 @@ class Penjualan extends CI_Controller
 	}
 
 
-	public function tambah_transaksi_penjualan()
+	public function tambah_penjualan()
 	{
-		$data['tr_penjualan'] = $this->Model_penjualan->get_transaksi_penjualan()->result();
+		$data['penjualan'] = $this->Model_penjualan->get_penjualan()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('transaksi/tr_penjualan_input', $data);
 		$this->load->view('templates/footer');
 	}
 
-	public function insert_transaksi_penjualan()
+	public function insert_penjualan()
 	{
 		$idTrpenjualan	= $this->input->post('idTrPenjualan');
 		$idBarang		= $this->input->post('idBarang');
 		$idpenjualan	= $this->input->post('idPenjualan');
+		$namaBarang		= $this->input->post('namaBarang');
 		$jumlah			= $this->input->post('jumlah');
 		$harga			= $this->input->post('harga');
 		$subTotal		= $this->input->post('subTotal');
@@ -38,18 +39,19 @@ class Penjualan extends CI_Controller
 			'idTrpenjualan'	=> $idTrPenjualan,
 			'idBarangt'		=> $idBarang,
 			'idPenjualan'	=> $idPenjualan,
+			'namaBarang'	=> $namaBarang,
 			'jumlah'		=> $jumlah,
 			'harga'			=> $harga,
 			'subTotal'		=> $subTotal,
 		);
-		$this->Model_penjualan->insert_transaksi_penjualan($data);
-		redirect('tr_penjualan');
+		$this->Model_penjualan->insert_penjualan($data);
+		redirect('penjualan');
 	}
 
-	public function edit_transaksi_penjualan($id)
+	public function edit_penjualan($id)
 	{
 		$where	= array('idTrPenjualan' => $id);
-		$data['tr_penjualan'] = $this->Model_penjualan->edit_transaksi_penjualan($where, 'tr_penjualan')->result();
+		$data['penjualan'] = $this->Model_penjualan->edit_penjualan($where, 'tr_penjualan')->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('transaksi/transaksi_penjualan', $data);
@@ -61,6 +63,7 @@ class Penjualan extends CI_Controller
 		$idTrpenjualan	= $this->input->post('idTrPenjualan');
 		$idBarang		= $this->input->post('idBarang');
 		$idpenjualan	= $this->input->post('idPenjualan');
+		$namaBarang		= $this->input->post('namaBarang');
 		$jumlah			= $this->input->post('jumlah');
 		$harga			= $this->input->post('harga');
 		$subTotal		= $this->input->post('subTotal');
@@ -71,16 +74,17 @@ class Penjualan extends CI_Controller
 			'idTrpenjualan'	=> $idTrPenjualan,
 			'idBarangt'		=> $idBarang,
 			'idpenjualan'	=> $idPenjualan,
+			'namaBarang'	=> $namaBarang,
 			'jumlah'		=> $jumlah,
 			'harga'			=> $harga,
 			'subTotal'		=> $subTotal,
 		);
 
 		$this->Model_penjualan->update($data, 'tr_penjualan', $id, 'idTrPenjualan');
-		redirect('tr_penjualan');
+		redirect('penjualan');
 	}
 
-	public function hapus_transaksi_penjualan($id)
+	public function hapus_penjualan($id)
 	{
 		$where = array('idTrpenjualan' => $id);
 		$this->Model_penjualan->hapus($where, 'tr_penjualan');
@@ -94,6 +98,6 @@ class Penjualan extends CI_Controller
 	  	</div>'
 		);
 
-		redirect('tr_penjualan');
+		redirect('penjualan');
 	}
 }

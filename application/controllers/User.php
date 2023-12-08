@@ -23,8 +23,9 @@ class User extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	public function insert_suplier()
+	public function insert_user()
 	{
+		$idUser			= $this->input->post('idUser');
 		$namaUser		= $this->input->post('namaUser');
 		$levelUser		= $this->input->post('levelUser');
 		$status			= $this->input->post('status');
@@ -32,8 +33,9 @@ class User extends CI_Controller
 
 		$data = array(
 
+			'idUser'		-> $idUser,
 			'namaUser'		=> $namaUser,
-			'levelUsert'	=> $levelUser,
+			'levelUser'		=> $levelUser,
 			'status'		=> $status
 		);
 		$this->Model_user->insert_user($data);
@@ -52,6 +54,7 @@ class User extends CI_Controller
 
 	public function update($id)
 	{
+		$idUser			= $this->input->post('idUser');
 		$namaUser		= $this->input->post('namaUser');
 		$levelUser		= $this->input->post('levelUser');
 		$status			= $this->input->post('status');
@@ -59,8 +62,9 @@ class User extends CI_Controller
 
 		$data = array(
 
+			'idUser'		-> $idUser,
 			'namaUser'		=> $namaUser,
-			'levelUsert'	=> $levelUser,
+			'levelUser'		=> $levelUser,
 			'status'		=> $status
 		);
 
@@ -68,7 +72,7 @@ class User extends CI_Controller
 		redirect('user');
 	}
 
-	public function hapus_suplier($id)
+	public function hapus_user($id)
 	{
 		$where = array('idUser' => $id);
 		$this->Model_user->hapus($where, 'ms_user');

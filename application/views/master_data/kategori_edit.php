@@ -10,18 +10,11 @@
  			<div class="card-body">
  				<div class="form-group">
  					<label>ID Kategori</label>
- 					<input type="text" class="form-control" name="namaKategori" placeholder="ID Kategori" value="<?php echo $sup->namaSupplier ?>">
+ 					<input type="text" class="form-control" name="idKategori" placeholder="ID Kategori" value="<?php echo $ktg->idKategori ?>">
  				</div>
  				<div class="form-group">
  					<label>Kategori</label>
- 					<input type="text" class="form-control" name="kategori" placeholder="Kategori" value="<?php echo $sup->alamat ?>">
- 				</div>
- 				<div class="form-group">
- 					<label>Status</label>
- 					<select class="form-control select2" style="width: 100%;" name="status">
- 						<option value="Aktif" <?php echo $sup->status == 'Aktif' ? 'selected' : '' ?>>Aktif</option>
- 						<option value="Tidak Aktif" <?php echo $sup->status == 'Tidak Aktif' ? 'selected' : '' ?>>Tidak Aktif</option>
- 					</select>
+ 					<input type="text" class="form-control" name="kategori" placeholder="Kategori" value="<?php echo $ktg->kategori ?>">
  				</div>
  				<!-- /.card-body -->
 

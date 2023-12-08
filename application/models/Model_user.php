@@ -1,40 +1,34 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 class Model_user extends CI_Model
 {
 
-    function login($username, $password)
-    {
+	public function get_user()
+	{
+		$this->db->select('*');
+		$this->db->from('ms_user');
+		return $this->db->get();
+	}
 
-    }
+	public function insert_user($data)
+	{
+		$this->db->insert('ms_user', $data);
+	}
+	public function edit_user($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
 
-    function tampilkan_data()
-    {
-        return $this->db->join('akses', 'akses.id_akses = user.id_akses', 'left')
-            ->get('user');
-    }
+	public function update($data, $table, $id, $row)
+	{
+		$this->db->where($row, $id);
+		return $this->db->update($table, $data);
+	}
 
-    function get_one($id)
-    {
-        $param  =   array('idUser' => $id);
-        return $this->db->get_where('user', $param);
-    }
-
-    function edit($data)
-    {
-        $this->db->where('idUser', $this->input->post('id'));
-        $this->db->update('user', $data);
-    }
-
-    function hapus($id)
-    {
-        $this->db->where('idUser', $id);
-        $this->db->delete('user');
-    }
-
-    function get_detail_modal($id)
-    {
-        return $this->db->where('idUser', $id)
-            ->get('user')
-            ->row();
-    }
+	public function hapus($where, $table)
+	{
+		$this->db->from($table);
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 }

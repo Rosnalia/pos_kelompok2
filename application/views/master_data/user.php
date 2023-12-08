@@ -5,12 +5,12 @@
     <!-- /.card-header -->
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
-		<div class="pull-right">
-			<?php
-				echo anchor('user_input', 'Tambah data', array('class' => 'btn btn-success'))
-			?>
-		</div>
-          </div>
+			<div class="pull-right">
+				<a href="<?= base_url('user/tambah_user') ?>" class="btn btn-success"><i class="fa fa-plus"></i>
+					Tambah Data
+				</a> 
+			</div>
+          </div> 
             <thead>
                 <tr>
 								<th>ID User</th>
