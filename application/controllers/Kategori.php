@@ -13,7 +13,6 @@ class Kategori extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-
 	public function tambah_kategori()
 	{
 		$data['kategori'] = $this->Model_kategori->get_kategori()->result();
@@ -27,7 +26,6 @@ class Kategori extends CI_Controller
 	{
 		$idKategori			= $this->input->post('idKategori');
 		$kategori			= $this->input->post('kategori');
-
 
 		$data = array(
 
