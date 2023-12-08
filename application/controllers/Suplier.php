@@ -80,16 +80,7 @@ class Suplier extends CI_Controller
 	{
 		$where = array('idSupplier' => $id);
 		$this->Model_suplier->hapus($where, 'ms_supplier');
-		$this->session->set_flashdata(
-			'success',
-			'<div class="alert alert-success alert-dismissible fade show" id="berhasil" role="alert">
-			<strong>Data berhasil dihapus</strong>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
-	  	</div>'
-		);
-
+		$this->session->set_flashdata('flashdata', 'Menghapus');
 		redirect('suplier');
 	}
 }

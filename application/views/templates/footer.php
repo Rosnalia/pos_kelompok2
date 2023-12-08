@@ -1,20 +1,24 @@
+<!-- /.card -->
+</section>
+<!-- right col -->
+</div>
+<!-- /.row (main row) -->
 </div><!-- /.container-fluid -->
 </div>
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-		<strong>Copyright &copy; 2023 <a>Kelompok 2 - Proyek TI</a>.</strong> 
-    </div>
-    
-  </footer>
+	<div class="float-right d-none d-sm-inline-block mb-3">
+		<b>Copyright &copy; 2023 <a>Kelompok 2 - Proyek TI</a>.</b>
+	</div>
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -22,6 +26,11 @@
 <script src="<?= base_url('assets/template') ?>/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/template') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- SweetAlert2 -->
+<script src="<?= base_url('assets/template') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
+
 <!-- DataTables  & Plugins -->
 <script src="<?= base_url('assets/template') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/template') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -41,21 +50,54 @@
 <!-- <script src="<?= base_url('assets/template') ?>/dist/js/demo.js"></script> -->
 <!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-    
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+	$(function() {
+		$("#example1").DataTable({
+			"responsive": true,
+			"lengthChange": false,
+			"autoWidth": false,
+
+		}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+		$('#example2').DataTable({
+			"paging": true,
+			"lengthChange": false,
+			"searching": false,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+		});
+	});
 </script>
+
+<script>
+	const flashData = $('.flash-data').data('flashdata');
+	if (flashData) {
+		Swal.fire({
+			title: 'Berhasil ',
+			text: flashData + ' Data',
+			type: 'success'
+		})
+	}
+
+	$('.btn-hps').on('click', function(e) {
+		e.preventDefault();
+		const href = $(this).attr('href');
+
+		Swal.fire({
+			title: 'Apakah Anda Yakin Akan menghapus data?',
+			showCancelButton: true,
+			confirmButtonColor: '#dc3741',
+			cancelButtonColor: '#6e7881',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value == true) {
+				document.location.href = href;
+			}
+		})
+	});
+</script>
+
 </body>
+
 </html>

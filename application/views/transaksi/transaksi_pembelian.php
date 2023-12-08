@@ -14,11 +14,11 @@
 			<thead>
 				<tr>
 					<th>ID Transaksi Pembelian</th>
-                    <th>ID Barang</th>
+					<th>ID Barang</th>
 					<th>ID Pembelian</th>
-                    <th>Nama Barang</th>
-                    <th>Jumlah</th>
-                    <th>Harga</th>
+					<th>Nama Barang</th>
+					<th>Jumlah</th>
+					<th>Harga</th>
 					<th>Sub Total</th>
 					<th>Aksi</th>
 				</tr>
@@ -34,7 +34,7 @@
 						<td><?php echo $trpem->subTotal; ?></td>
 						<td>
 							<a href='<?php echo base_url('transaksi/edit_pembelian/' . $trpem->idTrPembelian) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
-							<a href='#hapus' data-toggle="modal" class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
+							<a href='<?php echo base_url('transaksi/hapus_tr_pembelian/' . $trpem->idTrPembelian) ?>' class='btn btn-danger btn-sm btn-hps'><i class='fas fa-trash'></i></a>
 						</td>
 
 					</tr>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-				<a href="<?php echo base_url('transaksi/hapus_tr_pembelian/' . $trpem->idTrPembelian) ?>" class="btn btn-danger">Hapus</a>
+				<a href="" class="btn btn-danger">Hapus</a>
 			</div>
 		</div>
 	</div>

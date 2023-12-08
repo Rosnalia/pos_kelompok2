@@ -100,16 +100,7 @@ class Barang extends CI_Controller
 	{
 		$where = array('idBarang' => $id);
 		$this->Model_barang->hapus($where, 'ms_barang');
-		$this->session->set_flashdata(
-			'success',
-			'<div class="alert alert-success alert-dismissible fade show" id="berhasil" role="alert">
-			<strong>Data berhasil dihapus</strong>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
-	  	</div>'
-		);
-
+		$this->session->set_flashdata('flashdata', 'Menghapus');
 		redirect('barang');
 	}
 }

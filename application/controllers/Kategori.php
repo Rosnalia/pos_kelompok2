@@ -52,7 +52,7 @@ class Kategori extends CI_Controller
 	{
 		$idKategori			= $this->input->post('idKategori');
 		$kategori			= $this->input->post('kategori');
-		
+
 		$data = array(
 
 			'idKategori'	=> $idKategori,
@@ -67,16 +67,7 @@ class Kategori extends CI_Controller
 	{
 		$where = array('idKategori' => $id);
 		$this->Model_kategori->hapus($where, 'ms_kategori');
-		$this->session->set_flashdata(
-			'success',
-			'<div class="alert alert-success alert-dismissible fade show" id="berhasil" role="alert">
-			<strong>Data berhasil dihapus</strong>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
-	  	</div>'
-		);
-
+		$this->session->set_flashdata('flashdata', 'Menghapus');
 		redirect('kategori');
 	}
 }
