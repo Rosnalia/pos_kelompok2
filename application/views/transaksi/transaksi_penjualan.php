@@ -13,8 +13,6 @@
 			</div>
 			<thead>
 				<tr>
-					<th>ID Transaksi Penjualan</th>
-					<th>ID Barang</th>
 					<th>ID Penjualan</th>
 					<th>Nama Barang</th>
 					<th>Jumlah</th>
@@ -26,8 +24,6 @@
 			<tbody>
 				<?php foreach ($penjualan as $trpen) : ?>
 					<tr>
-						<td><?php echo $trpen->idTrPenjualan; ?></td>
-						<td><?php echo $trpen->idBarang; ?></td>
 						<td><?php echo $trpen->idPenjualan; ?></td>
 						<td><?php echo $trpen->namaBarang; ?></td>
 						<td><?php echo $trpen->jumlah; ?></td>

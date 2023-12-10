@@ -11,6 +11,14 @@ class Model_barang extends CI_Model
 		return $this->db->get();
 	}
 
+	public function get_barang_by_id($id)
+	{
+		$this->db->select('*');
+		$this->db->from('ms_barang');
+		$this->db->where('idBarang', $id);
+		return $this->db->get()->row();
+	}
+
 	public function insert_barang($data)
 	{
 		$this->db->insert('ms_barang', $data);

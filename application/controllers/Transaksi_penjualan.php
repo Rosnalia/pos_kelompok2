@@ -17,10 +17,28 @@ class Transaksi_penjualan extends CI_Controller
 	public function tambah_penjualan()
 	{
 		$data['penjualan'] = $this->Model_penjualan->get_penjualan()->result();
+		$data['barang'] = $this->Model_barang->get_barang()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('transaksi/tr_penjualan_input', $data);
 		$this->load->view('templates/footer');
+	}
+	public function get_data_barang($id_barang)
+	{
+		$barang = $this->Model_barang->get_barang_by_id($id_barang);
+		if ($barang) {
+			$response = [
+				'harga'    => $barang->hargaJual,
+			];
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($response));
+		} else {
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode(['error' => 'Data tidak ditemukan']))
+				->set_status_header(404);
+		}
 	}
 
 	public function insert_penjualan()

@@ -23,13 +23,19 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <script src="<?= base_url('assets/template') ?>/plugins/jquery/jquery.min.js"></script>
+
+<!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/template') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
 <!-- SweetAlert2 -->
 <script src="<?= base_url('assets/template') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Select2 -->
+<script src="<?= base_url('assets/template') ?>/plugins/select2/js/select2.full.min.js"></script>
 
 <!-- DataTables  & Plugins -->
 <script src="<?= base_url('assets/template') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -47,7 +53,8 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/template') ?>/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<!-- <script src="<?= base_url('assets/template') ?>/dist/js/demo.js"></script> -->
+
+<!-- <script src="</dist/js/demo.js"></script> -->
 <!-- Page specific script -->
 <script>
 	$(function() {
@@ -66,6 +73,14 @@
 			"autoWidth": false,
 			"responsive": true,
 		});
+
+		//Initialize Select2 Elements
+		$('.select2').select2()
+
+		//Initialize Select2 Elements
+		$('.select2bs4').select2({
+			theme: 'bootstrap4'
+		})
 	});
 </script>
 
