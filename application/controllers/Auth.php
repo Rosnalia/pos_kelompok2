@@ -6,7 +6,7 @@ class Auth extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_user');
+        $this->load->model('Model_login');
     }
 	public function login() {
 		$this->form_validation->set_rules('namaUser', 'Namauser', 'required', ['required' => 'Username Wajib diisi']);
@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('login');
 		} else {
-			$auth = $this->Model_user->cek_login();
+			$auth = $this->Model_login->cek_login();
 			if($auth == FALSE) {
 				$this->session->set_flashdata('pean', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 				Username atau Password anda salah!
