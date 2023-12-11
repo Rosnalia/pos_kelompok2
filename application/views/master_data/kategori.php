@@ -24,12 +24,9 @@
 						<td><?php echo $ktg->idKategori; ?></td>
 						<td><?php echo $ktg->kategori; ?></td>
 						<td>
-							<a href='<?php echo base_url('kategori/edit_kategori/' . $ktg->idkategori) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
-							<a href='<?php echo base_url('kategori/hapus_kategori/' . $ktg->idKategori) ?>' data-toggle="modal" class='btn btn-danger btn-sm btn-hps'><i class='fas fa-trash'></i></a>
 							<a href='<?php echo base_url('kategori/edit_kategori/' . $ktg->idKategori) ?>' class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>
-							<a href='#hapus' data-toggle="modal" class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
+							<a href='<?php echo base_url('kategori/hapus_kategori/' . $ktg->idKategori) ?>' class='btn btn-danger btn-sm btn-hps'><i class='fas fa-trash'></i></a>
 						</td>
-
 					</tr>
 				<?php endforeach; ?>
 			</tbody>

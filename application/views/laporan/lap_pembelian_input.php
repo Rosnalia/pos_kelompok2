@@ -23,15 +23,15 @@
  				<label>No Faktur</label>
  				<input type="text" class="form-control" name="noFaktur" placeholder="No Faktur">
  			</div>
-			<div class="form-group">
+ 			<div class="form-group">
  				<label>Tanggal Pembelian</label>
  				<input type="text" class="form-control" name="tglPembelian" placeholder="Tanggal Pembelian">
  			</div>
-			<div class="form-group">
+ 			<div class="form-group">
  				<label>Tanggal Input</label>
  				<input type="text" class="form-control" name="tglInput" placeholder="Tanggal Input">
  			</div>
-			<div class="form-group">
+ 			<div class="form-group">
  				<label>Total</label>
  				<input type="text" class="form-control" name="total" placeholder="Total">
  			</div>
@@ -39,7 +39,7 @@
 
  			<div class="box-footer">
  				<button type="submit" name="submit" class="btn btn-primary ">Simpan</button>
- 				<a href="<?php echo base_url() ?>barang" class="btn btn-default ">Cancel</a>
+ 				<a href="<?php echo base_url() ?>laporan_pembelian" class="btn btn-default ">Cancel</a>
  			</div>
  	</form>
  </div>
